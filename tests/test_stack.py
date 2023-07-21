@@ -37,3 +37,14 @@ def test_pop():
 
     assert stack_test.top is None
     assert data == 'data1'
+
+
+def test_str():
+    stack_test = stack.Stack()
+    assert str(stack.Stack()) == ""
+
+    stack_test.push('data1')
+    stack_test.push('data2')
+    stack_test.push('data3')
+
+    assert str(stack_test) == "data3 data2 data1 "
