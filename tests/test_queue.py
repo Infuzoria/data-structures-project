@@ -29,6 +29,19 @@ def test_enqueue():
     assert queue_test.tail.next_node is None
 
 
+def test_dequeue():
+    queue_test = queue.Queue()
+    queue_test.enqueue('data1')
+    queue_test.enqueue('data2')
+    queue_test.enqueue('data3')
+
+    assert queue_test.dequeue() == "data1"
+    assert queue_test.dequeue() == "data2"
+    assert queue_test.head.data == "data3"
+    queue_test.dequeue()
+    assert queue_test.dequeue() is None
+
+
 def test_str():
     queue_test = queue.Queue()
     assert str(queue.Queue()) == ""
