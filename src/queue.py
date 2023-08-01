@@ -34,10 +34,14 @@ class Queue:
     def dequeue(self):
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
-
         :return: данные удаленного элемента
         """
-        pass
+        if self.head is None:
+            return None
+        else:
+            old_head = self.head
+            self.head = self.head.next_node
+            return old_head.data
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
